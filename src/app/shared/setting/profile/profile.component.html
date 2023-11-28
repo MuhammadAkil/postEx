@@ -1,0 +1,71 @@
+<div class="card-header">
+    <h5 class="card-title m-0 text-primary fw-500"><i class="fa-light fa-user text-primary"></i>
+        <span class="ps-2">Personal Information</span>
+    </h5>
+</div>
+<form [formGroup]="profileData" (ngSubmit)="onProfileChange()">
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <span class="avatar rounded-4 avatar-xl">
+                    <img id="blah" src="#" class="rounded-circle" width="120px" alt="" />
+                </span>
+            </div>
+            <div class="col-auto">
+                <label class="border rounded p-3 btn-default">
+                    <i class="bi bi-camera me-1"></i>
+                    Change avatar
+                    <input (change)="onPictureChange($event)" accept="image/*" type='file' />
+                </label>
+            </div>
+
+        </div>
+        <h3 class="card-title mt-4">Profile Details</h3>
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="form-label ">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="first_name" placeholder="Akil"
+                        [ngClass]="{ 'is-invalid': profilesubmitted && f1['first_name'].errors }" required>
+                    <div *ngIf="profilesubmitted && f1['first_name'].errors" class="invalid-feedback">
+                        <div *ngIf="f1['first_name'].errors['required']">First Name is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="form-label ">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="last_name" placeholder="Mehar"
+                        [ngClass]="{ 'is-invalid': profilesubmitted && f1['last_name'].errors }" required>
+                    <div *ngIf="profilesubmitted && f1['last_name'].errors" class="invalid-feedback">
+                        <div *ngIf="f1['last_name'].errors['required']">Last Name is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="form-label ">Email <span class="text-danger">*</span></label>
+                    <input type="text" placeholder="akilmehar12@gmail.com" class="form-control" formControlName="email" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-transparent mt-auto">
+        <div class="btn-list d-flex justify-content-end">
+            <button class="btn btn-primary shadow-none  font-weight-400 ms-auto" [disabled]="profileshowhide"
+                type="submit">
+                <div class="spinner-grow spinner-grow-sm " *ngIf="profileshowhide" role="status ">
+                    <span class="sr-only ">Loading...</span>
+                </div>
+                <span >
+                    <i class="bi bi-save mx-1"></i>
+                    Update profile</span>
+            </button>
+
+        </div>
+
+    </div>
+</form>

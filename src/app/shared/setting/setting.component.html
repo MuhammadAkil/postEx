@@ -1,0 +1,171 @@
+<div class="page-header d-print-none px-4 mx-3 my-2">
+    <div class="">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                    Overview
+                </div>
+                <h2 class="page-title">
+                    Settings
+                </h2>
+            </div>
+            <!-- Page title actions -->
+
+
+        </div>
+    </div>
+</div>
+
+<div class="page-body px-4 mx-3 my-2">
+    <div class="">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-3 d-none d-md-block border-end">
+                    <div class="card-body">
+                        <h4 class="subheader">Settings</h4>
+
+                        <div class="list-group list-group-transparent" role="tablist" aria-orientation="vertical">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center active  justify-content-between"
+                                id="user-set-information-tab" data-bs-toggle="pill" href="#user-set-information"
+                                role="tab" aria-controls="user-set-information" aria-selected="false">
+                                <span class="f-w-500"><i class="fa fa-user me-3"></i>My
+                                    Account</span><span class="float-end"><i class="fa fa-chevron-right"></i></span>
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                                id="user-set-password-tab" data-bs-toggle="pill" href="#user-set-password" role="tab"
+                                aria-controls="user-set-password" aria-selected="false">
+                                <span class="f-w-500"><i class="fa fa-lock me-3"></i>Change
+                                    Password</span><span class="float-end"><i class="fa fa-chevron-right"></i></span>
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                                id="user-note-tab" data-bs-toggle="pill" href="#user-note" role="tab"
+                                aria-controls="user-set-password" aria-selected="false">
+                                <span class="f-w-500"><i class="fa fa-sticky-note me-3" aria-hidden="true"></i>
+                                    Company Note</span><span class="float-end"><i
+                                        class="fa fa-chevron-right"></i></span>
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                                id="user-price-tab" data-bs-toggle="pill" href="#user-price" role="tab"
+                                aria-controls="user-set-price" aria-selected="false">
+                                <span class="f-w-500"><i class="fa fa-tags me-3" style="rotate: 90deg;"
+                                        aria-hidden="true"></i>
+                                    Pricing Policy</span><span class="float-end"><i
+                                        class="fa fa-chevron-right"></i></span>
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                                id="user-set-appsettings-tab" data-bs-toggle="pill" href="#user-set-appsettings"
+                                role="tab" aria-controls="user-set-appsettings" aria-selected="false">
+                                <span class="f-w-500"><i class="fa fa-cogs me-3"></i>System
+                                    Settings</span>
+                                <span class="float-end"><i class="fa fa-chevron-right"></i></span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col d-flex flex-column">
+                    <div class="tab-content card-body">
+                        <div class="tab-pane fade active show" id="user-set-information" role="tabpanel"
+                            aria-labelledby="user-set-information-tab">
+                            <app-profile></app-profile>
+                        </div>
+                        <div class="tab-pane fade" id="user-set-password" role="tabpanel"
+                            aria-labelledby="user-set-password-tab">
+                            <div class="card-header">
+                                <h5 class="card-title m-0 text-primary fw-500"><i
+                                        class="fa-light fa-lock text-primary"></i>
+                                    <span class="ps-2">Change Password</span>
+                                </h5>
+                            </div>
+                            <form [formGroup]="changePassword" (ngSubmit)="onChangePassword()">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="alert alert-warning" role="alert">
+                                                <small class="alert-heading">Alert! Do not share your password</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label ">Current Password <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="password" class="form-control border-0"
+                                                    style="background-color: #f0f2f8;" formControlName="password"
+                                                    [ngClass]="{ 'is-invalid':
+                                                                               passwordsubmitted && f['password'].errors
+                                                  }" required placeholder="Enter current password " />
+                                                <div *ngIf="passwordsubmitted && f['password'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['password'].errors['required']">
+                                                        Password is required
+                                                    </div>
+                                                    <div *ngIf="f['password'].errors['minlength']">
+                                                        Password must be at least 8 characters long.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label ">New Password <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="password" class="form-control border-0"
+                                                    style="background-color: #f0f2f8;" formControlName="npassword"
+                                                    [ngClass]="{ 'is-invalid':
+                                                                               passwordsubmitted && f['npassword'].errors
+                                                  }" required placeholder="Enter your new password " />
+                                                <div *ngIf="passwordsubmitted && f['npassword'].errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f['npassword'].errors['required']">
+                                                        New Password is required
+                                                    </div>
+                                                    <div *ngIf="f['npassword'].errors['minlength']">
+                                                        New Password must be at least 8 characters long.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-end">
+                                    <button class="btn btn-primary shadow-none font-weight-400 ms-auto"
+                                        [disabled]="passwordshowhide" type="submit">
+                                        <div class="spinner-grow spinner-grow-sm " *ngIf="passwordshowhide"
+                                            role="status ">
+                                        </div>
+                                        <span>
+                                            <i class="fa fa-save mx-1"></i>
+                                            Change password</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="user-note" role="tabpanel" aria-labelledby="user-note-tab">
+                            <!-- <app-note></app-note> -->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi non repellat nisi asperiores
+                            possimus repellendus accusamus iste nobis delectus illo.
+
+                        </div>
+                        <div class="tab-pane fade" id="user-set-appsettings" role="tabpanel"
+                            aria-labelledby="user-set-appsettings-tab">
+                            <!-- <app-appsettings></app-appsettings> -->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi non repellat nisi asperiores
+                            possimus repellendus accusamus iste nobis delectus illo.
+
+                        </div>
+                        <div class="tab-pane fade" id="user-price" role="tabpanel" aria-labelledby="user-price-tab">
+                            <!-- <app-pricingpolicy></app-pricingpolicy> -->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi non repellat nisi asperiores
+                            possimus repellendus accusamus iste nobis delectus illo.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

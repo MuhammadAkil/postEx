@@ -1,0 +1,43 @@
+@media screen and (max-width:1024px) {
+
+    // .sidebar-card {
+    //     bottom: 8% !important;
+    //     // width: 80px !important;
+
+    // }
+
+    #sidebar {
+        position: fixed;
+        z-index: 10;
+        top: 57px;
+    }
+}
+
+// .sidebar-card {
+//     position: absolute;
+//     bottom: 10%;
+//     width: 207px;
+// }
+.sidebar{
+    width: 14rem;
+}
+.nav-item:hover{
+    background-color: #0000001a;
+    width: 13.5rem;
+    border-left: 8px solid #5165d4 !important;
+    transition: all 0.5 ease-in-out;
+
+}
+.nav-link:hover,.nav-link>span:hover {
+    // color: #000 !important;
+}
+
+.sidebar-dark .nav-item {
+    width: 13rem !important;
+}
+.bg-gradient {
+    background-color: #fff;
+    /* background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%); */
+    // background-size: cover;
+}
+

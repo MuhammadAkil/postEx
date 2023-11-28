@@ -1,0 +1,15 @@
+@media screen and (max-width:1024px) {}
+
+.navbar {
+    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 2;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.bg-gradient {
+    background-color: #f5f6fb !important;
+}

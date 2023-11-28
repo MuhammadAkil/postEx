@@ -1,0 +1,230 @@
+<div class="page-header d-print-none px-4 mx-3 my-2">
+    <div class="">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                    Overview
+                </div>
+                <h2 class="page-title">
+                    Invoice Information
+                </h2>
+            </div>
+            <!-- Page title actions -->
+
+
+        </div>
+    </div>
+</div>
+<div class="page mb-5 pb-5" #content>
+    <div class="page-wrapper">
+        <!-- Page body -->
+        <div class="page-body">
+            <div class="">
+                <div class="row">
+                    <div class="col-xxl-12 px-5">
+                        <div class="card" id="demo" >
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card-header border-bottom-dashed p-4">
+                                        <div class="d-flex justify-content-between py-2">
+                                            <p class="h3">PostEx</p>
+                                            <!-- <div class="">
+                                            <img src="./assets/images/logo.svg" alt="ParkEzi Logo"
+                                                class="navbar-brand-images w-25">
+                                        </div> -->
+                                            <div>
+                                                <h5 class=" text-capitalize text-nowrap">lahore</h5>
+                                                <address class="text-nowrap">
+                                                    DHA Phase lahore
+
+                                                    <br>
+                                                    <a href="mailto:akilmehar12@gmail.com">akilmehar12@gmail.com</a>
+
+                                                </address>
+
+                                                <!-- </div> -->
+                                                <!-- <div class="col-12 my-5">
+                              <h1>Invoice <span class="px-3"> #321654</span></h1>
+                            </div> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card-body p-4">
+                                            <div class="row g-3">
+                                                <div class="col-lg-3 col-6">
+                                                    <p class="text-muted mb-2 text-uppercase fw-semibold">Invoice No</p>
+                                                    <h5 class="fs-14 mb-0">#VL<span id="invoice-no">25000355</span></h5>
+                                                </div>
+
+                                                <div class="col-lg-3 col-6">
+                                                    <p class="text-muted mb-2 text-uppercase fw-semibold">Date</p>
+                                                    <h5 class="fs-14 mb-0"><span id="invoice-date">23 Nov, 2021</span>
+                                                        <small class="text-muted ms-2" id="invoice-time">02:36
+                                                            PM</small>
+                                                    </h5>
+                                                </div>
+
+                                                <div class="col-lg-3 col-6">
+                                                    <p class="text-muted mb-2 text-uppercase fw-semibold">Payment Status
+                                                    </p>
+                                                    <span class="badge bg-success-subtle text-success fs-11"
+                                                        id="payment-status">Paid</span>
+                                                </div>
+
+                                                <div class="col-lg-3 col-6">
+                                                    <p class="text-muted mb-2 text-uppercase fw-semibold">Total Amount
+                                                    </p>
+                                                    <h5 class="fs-14 mb-0">$<span id="total-amount">500</span></h5>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card-body p-4 border-top border-top-dashed">
+                                            <div class="d-flex justify-content-between g-3">
+                                                <div>
+                                                    <h6 class="text-muted text-uppercase fw-semibold mb-3">IN IMAGE</h6>
+                                                    <img src="https://media.istockphoto.com/id/1162019476/photo/boy-and-dog-in-toy-racing-car.jpg?s=2048x2048&w=is&k=20&c=HpgTLS8FekzEdCJd_4vXa4Vxv8xuCOBh3NtD-7Bg3kA="
+                                                        class="my-2 W-50 img-fluid"
+                                                        style="  height: 100px; width: 170PX;" />
+                                                </div>
+
+                                                <div>
+                                                    <h6 class="text-muted text-uppercase fw-semibold mb-3">OUT IMAGE
+                                                    </h6>
+                                                    <img src="https://media.istockphoto.com/id/1162019476/photo/boy-and-dog-in-toy-racing-car.jpg?s=2048x2048&w=is&k=20&c=HpgTLS8FekzEdCJd_4vXa4Vxv8xuCOBh3NtD-7Bg3kA="
+                                                        class="mb-2 W-50 img-fluid"
+                                                        style="  height: 100px; width: 170PX;" />
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card-body p-4">
+                                            <div class="table-responsive">
+                                                <table
+                                                    class="table table-border text-center table-nowrap align-middle mb-0">
+                                                    <thead>
+                                                        <tr class="table-active">
+                                                            <th scope="col" style="width: 50px;">#</th>
+                                                            <th scope="col">Vehicle</th>
+                                                            <th class="col">In Date</th>
+                                                            <th class="col">In Time</th>
+                                                            <th class="col">Out Date</th>
+                                                            <th class="col">Out Time</th>
+                                                            <th scope="col">HOURLY RATE</th>
+                                                            <th scope="col">TOTAL HOURS</th>
+                                                            <th scope="col" class="text-end">Amount</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="products-list">
+                                                        <tr *ngFor="let row of tableData; let i = index">
+                                                            <th scope="row">{{ i + 1 }}</th>
+                                                            <td class="text-start">
+                                                                <p class="text-muted mb-0">{{ row.vehicle }}</p>
+                                                            </td>
+                                                            <td>{{ row.inDate }}</td>
+                                                            <td>{{ row.inTime }}</td>
+                                                            <td>{{ row.outDate }}</td>
+                                                            <td>{{ row.outTime }}</td>
+                                                            <td>{{ row.hourlyRate }}</td>
+                                                            <td>{{ row.totalHours }}</td>
+                                                            <td class="text-end">{{ row.amount }}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="border-top border-top-dashed mt-2">
+                                                <table
+                                                    class="table table-borderless table-nowrap align-middle mb-0 ms-auto"
+                                                    style="width:250px">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Sub Total</td>
+                                                            <td class="text-end">$ 500</td>
+                                                        </tr>
+
+                                                        <tr class="border-top border-top-dashed fs-15">
+                                                            <th scope="row">Total Amount</th>
+                                                            <th class="text-end">$ 500</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <div class="mt-3">
+                                                <h6 class="text-muted text-uppercase fw-semibold mb-3">Payment Details:
+                                                </h6>
+                                                <p class="text-muted mb-1">Payment Method: <span class="fw-medium"
+                                                        id="payment-method">Mastercard</span></p>
+                                                <p class="text-muted mb-1">Card Holder: <span class="fw-medium"
+                                                        id="card-holder-name">David
+                                                        Nichols</span></p>
+                                                <p class="text-muted mb-1">Card Number: <span class="fw-medium"
+                                                        id="card-number">xxx xxxx xxxx
+                                                        1234</span></p>
+                                                <p class="text-muted">Total Amount: <span class="fw-medium" id="">$
+                                                    </span><span id="card-total-amount">500</span></p>
+                                            </div>
+                                            <div class="mt-4">
+                                                <div class="alert alert-info">
+                                                    <p class="mb-0"><span class="fw-semibold">NOTES:</span>
+                                                        <span id="note">All accounts are to be paid within 7 days from
+                                                            receipt of invoice. To be paid
+                                                            by cheque or
+                                                            credit card or direct payment online. If account is not paid
+                                                            within 7
+                                                            days the credits details supplied as confirmation of work
+                                                            undertaken
+                                                            will be charged the agreed quoted fee noted above.
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hstack gap-2 justify-content-end d-print-none my-4 mx-3">
+                                <a href="javascript:window.print()" class="btn btn-success"><i
+                                        class="ri-printer-line align-bottom me-1"></i> Print</a>
+                                <a href="javascript:void(0);" (click)="downloadPdf()" class="btn btn-primary"><i
+                                        class="ri-download-2-line align-bottom me-1"></i> Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- QR Modal -->
+    <div class="modal modal-blur fade" id="qr-modal" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+
+                    <img src="static/qr-code.png" class="w-50" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link link-secondary me-auto"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>

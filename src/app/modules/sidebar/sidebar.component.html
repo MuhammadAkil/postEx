@@ -1,0 +1,50 @@
+<div id="sidebar" class="collapse collapse-horizontal show border-end text-black ">
+    <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+
+        <ul class="navbar-nav bg-white sidebar sidebar-light accordion px-2" id="accordionSidebar">
+
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/home">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="bi bi-wink"></i>
+                </div>
+                <div class="sidebar-brand-text px-5 py-1"><img
+                        src="https://www.canterburypilgrimages.com/wp-content/uploads/2021/04/dummy-logo-5b.png"
+                        height="80px" alt=""></div>
+            </a>
+            <hr>
+            <li class="nav-item  active">
+                <a class="nav-link "  id="ease-in-out" routerLink="/home">
+                    <i class="me-2 bi bi-speedometer2"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item  active">
+                <a class="nav-link " routerLink="/todos">
+                    <i class="me-2 bi bi-check2-circle"></i>
+                    <span>Todos</span></a>
+            </li>
+
+            <li class="nav-item  active">
+                <a class="nav-link  collapsed" routerLink="/invoice">
+                    <i class="me-2 bi bi-receipt"></i>
+                    <span>Invoice</span>
+                </a>
+            </li>
+            <li class="nav-item  active">
+                <a class="nav-link " routerLink="/chart">
+                    <i class="me-2 bi bi-bar-chart-line"></i>
+                    <span>Charts</span></a>
+            </li>
+            <li class="nav-item  active">
+                <a class="nav-link " routerLink="/settings">
+                    <i class="me-2 bi bi-gear"></i>
+                    <span>Setings</span></a>
+            </li>
+            <li class="nav-item  active">
+                <a class="nav-link " (click)="this.auth.logout()">
+                    <i class="me-2 bi bi-box-arrow-right"></i>
+                    <span>Logout</span></a>
+            </li>
+
+        </ul>
+    </div>
+</div>

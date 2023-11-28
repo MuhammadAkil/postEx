@@ -1,0 +1,35 @@
+<div class="conainer">
+    <div class="row flex-nowrap " style="height: 100dvh !important;">
+        <div class="text-white  h-100 col-auto px-0 bg-white ">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col bg-gradient py-2 h-100-vh">
+            <a data-bs-target="#sidebar " data-bs-toggle="collapse"
+                class=" border menu rounded-3 p-1 mx-4 text-decoration-none "><i
+                    class="bi bi-list bi-lg py-2 p-1 text-black fs-3        "></i></a>
+            <app-header></app-header>
+            <div class="px-3 h-75 pb-5" style="margin-top: 100px;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<!-- 
+<div class="">
+    <div class="row ">
+        <div [ngClass]="{'col-1': !isSidebarVisible, 'col-2': isSidebarVisible}" class=" text-white h-100-vh px-0">
+            <app-sidebar *ngIf="isSidebarVisible"></app-sidebar>
+        </div>
+        <div [ngClass]="{'col-10    ': isSidebarVisible, 'col-12': !isSidebarVisible}">
+            <a (click)="toggleSidebar()" class="border menu rounded-3 p-1 mx-4 text-decoration-none"><i
+                    class="bi bi-list bi-lg py-2 p-1 "></i></a>
+            <app-header></app-header>
+            <div class="px-3" style="margin-top: 100px;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div> -->
